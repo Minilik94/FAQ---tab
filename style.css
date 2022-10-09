@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Muli:wght@100;700&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eee;
+  font-family: "Muli", sans-serif;
+  display: flex;
+  font-weight: 100;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+.container {
+  margin-top: 10px;
+  
+}
+.faq {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.questions {
+  margin-bottom: 10px;
+  border: 1px solid;
+  padding: 5px 45px 5px 10px;
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.questions.active::after,
+.questions.active::before{
+  content: '\f075';
+  font-family: 'Font Awesome 5 free';
+  color: rgb(39, 167, 39);
+  font-size: 7rem;
+  position: absolute;
+opacity: 0.2;
+  top: 20px;
+left: 20px;
+z-index: 0;
+}
+.questions.active::before{
+  color: #378d;
+  top: -10px;
+  left: -30px;
+  transform: rotateY(180deg);
+}
+.questions.active{
+  background-color: #fff;
+}
+.questions 
+.answer{
+  display: none;
+}
+.questions.active .answer{
+  display: block;
+}
+.btn{
+ background-color: transparent;
+ display: flex;
+ align-items: center;
+ border: 0;
+ justify-content: center;
+ position: absolute;
+ top: 20px;
+ right: 10px;
+ height: 30px;
+ width: 30px;
+ font-size: 16px;
+ font-weight: bold;
+ cursor: pointer;
+ transform: scale(0.98);
+}
+.btn .fa-times{
+  display: none;
+}
+.questions.active .btn .fa-times{
+  display: block;
+}
+.questions.active .btn .fa-chevron-down{
+  display: none;
+}
